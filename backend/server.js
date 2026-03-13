@@ -3,6 +3,7 @@ import helmet from "helmet"
 import cors from "cors"
 import dotenv from "dotenv"
 import productRoutes from "./routes/productRoutes.js";
+import { initDB } from "./config/db.js";
 
 const app = express();
 dotenv.config()
@@ -15,6 +16,6 @@ app.use(cors())
 
 app.use("/api/products", productRoutes)
 
-app.listen(PORT, () => {
+initDB().then(app.listen(PORT, () => {
   console.log("Server running on port " + PORT)
-})
+}))
