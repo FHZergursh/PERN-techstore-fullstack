@@ -5,7 +5,7 @@ const productRoutes = express.Router()
 
 productRoutes.get("/", getAllProducts)
 productRoutes.get("/:id", getProduct)
-productRoutes.put("/", addProduct)
+productRoutes.post("/", addProduct)
 productRoutes.delete("/:id", deleteProduct)
 productRoutes.patch("/:id", updateProduct)
 
