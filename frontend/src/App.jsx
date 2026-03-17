@@ -1,11 +1,20 @@
 import React from 'react'
+import Navbar from './components/Navbar.jsx'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage.jsx'
+import ProductPage from './pages/ProductPage.jsx'
 
 const App = () => {
   return (
-    <div>
-        <h1 class="text-3xl font-bold underline text-red-500">
-    Hello world!
-  </h1>
+    <div className='min-h-screen bg-base-200 transition-colors duration-300'>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
+      </Routes>
+
+
     </div>
   )
 }
